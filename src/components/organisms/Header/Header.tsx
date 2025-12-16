@@ -1,68 +1,166 @@
 export const Header = () => {
     return (
+        <>
+            {/* INTERNAL CSS – ONLY THIS FILE */}
+            <style>{`
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                    font-family: "Segoe UI", Arial, sans-serif;
+                }
 
-        <header className="sticky top-0 z-50 w-full border-b border-border-color bg-background-light/95 backdrop-blur-sm dark:bg-background-dark/95 dark:border-[#3e3228]">
-            <h1> Ram Ram JII</h1>
-            <div className="layout-container flex h-full grow flex-col">
-                <div className="flex flex-1 justify-center">
-                    <div className="layout-content-container flex w-full max-w-[1280px] items-center justify-between px-4 py-3 md:px-10">
-                        {/* Logo and Brand */}
-                        <div className="flex items-center gap-4 text-text-main dark:text-white">
-                            <div className="size-8 text-primary">
-                                <span className="material-symbols-outlined text-3xl">forest</span>
+                .header {
+                    background: linear-gradient(135deg, #0b3d2e, #145a32, #1e8449);
+                    border-bottom: 4px solid #ff9933;
+                    color: white;
+                    position: sticky;
+                    top: 0;
+                    z-index: 1000;
+                }
+
+                .outer {
+                    padding: 18px 50px;
+                }
+
+                .row {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                /* BRANDING */
+                .branding h1 {
+                    font-size: 28px;
+                    color: #ffcc00;
+                    letter-spacing: 1px;
+                    text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+                }
+
+                .branding h2 {
+                    font-size: 15px;
+                    font-weight: 400;
+                    color: #eaeaea;
+                    margin-top: 4px;
+                    letter-spacing: 0.5px;
+                }
+
+                /* NAV */
+                .nav {
+                    display: flex;
+                    align-items: center;
+                    gap: 40px;
+                }
+
+                .nav-links a {
+                    text-decoration: none;
+                    color: white;
+                    font-size: 15px;
+                    font-weight: 500;
+                    margin-right: 22px;
+                    position: relative;
+                    padding-bottom: 5px;
+                }
+
+                .nav-links a::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 0%;
+                    height: 2px;
+                    background: #ffcc00;
+                    transition: 0.3s ease;
+                }
+
+                .nav-links a:hover::after {
+                    width: 100%;
+                }
+
+                /* BUTTONS */
+                .auth-buttons button {
+                    padding: 7px 18px;
+                    margin-left: 10px;
+                    border-radius: 20px;
+                    border: none;
+                    font-size: 14px;
+                    font-weight: 500;
+                    cursor: pointer;
+                    transition: 0.3s;
+                }
+
+                .signup {
+                    background: #ff9933;
+                    color: #000;
+                }
+
+                .login {
+                    background: transparent;
+                    color: white;
+                    border: 1px solid white;
+                }
+
+                .auth-buttons button:hover {
+                    transform: translateY(-1px);
+                    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+                }
+
+                /* MENU ICON */
+                .menu-btn {
+                    font-size: 26px;
+                    background: transparent;
+                    border: none;
+                    color: white;
+                    cursor: pointer;
+                    display: none;
+                }
+
+                /* RESPONSIVE */
+                @media (max-width: 900px) {
+                    .nav {
+                        display: none;
+                    }
+                    .menu-btn {
+                        display: block;
+                    }
+                }
+            `}</style>
+
+            {/* HEADER JSX – STRUCTURE UNCHANGED */}
+            <header className="header">
+                <div className="outer">
+                    <div className="container">
+                        <div className="row">
+
+                            <div className="branding">
+                                <div className="title-box">
+                                    <span>
+                                        <h1>Ram Ram JII 🔱🚩</h1>
+                                    </span>
+                                </div>
+                                <h2>Jharkhand Tourism</h2>
                             </div>
-                            <h2 className="text-text-main dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">
-                                Jharkhand Tourism
-                            </h2>
+
+                            <nav className="nav">
+                                <div className="nav-links">
+                                    <a href="#destinations">Destinations</a>
+                                    <a href="#plan-trip">Plan Trip</a>
+                                    <a href="#marketplace">Marketplace</a>
+                                    <a href="#about">About Us</a>
+                                </div>
+
+                                <div className="auth-buttons">
+                                    <button className="signup">Sign Up</button>
+                                    <button className="login">Login</button>
+                                </div>
+                            </nav>
+
+                            <button className="menu-btn">☰</button>
+
                         </div>
-
-                        {/* Desktop Navigation */}
-                        <nav className="hidden md:flex flex-1 justify-end gap-8">
-                            <div className="flex items-center gap-9">
-                                <a
-                                    className="text-text-main dark:text-gray-200 hover:text-primary transition-colors text-sm font-medium leading-normal"
-                                    href="#"
-                                >
-                                    Destinations
-                                </a>
-                                <a
-                                    className="text-text-main dark:text-gray-200 hover:text-primary transition-colors text-sm font-medium leading-normal"
-                                    href="#"
-                                >
-                                    Plan Trip
-                                </a>
-                                <a
-                                    className="text-text-main dark:text-gray-200 hover:text-primary transition-colors text-sm font-medium leading-normal"
-                                    href="#"
-                                >
-                                    Marketplace
-                                </a>
-                                <a
-                                    className="text-text-main dark:text-gray-200 hover:text-primary transition-colors text-sm font-medium leading-normal"
-                                    href="#"
-                                >
-                                    About Us
-                                </a>
-                            </div>
-
-                            {/* CTA Buttons */}
-                            <div className="flex gap-2">
-                                <button className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white hover:bg-primary/90 transition-colors text-sm font-bold leading-normal tracking-[0.015em]">
-                                    <span className="truncate">Sign Up</span>
-                                </button>
-                                <button className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-transparent border border-border-color text-text-main dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-sm font-bold leading-normal tracking-[0.015em]">
-                                    <span className="truncate">Login</span>
-                                </button>
-                            </div>
-                        </nav>
-
-                        {/* Mobile Menu Icon */}
-                        <button className="md:hidden text-text-main dark:text-white">
-                            <span className="material-symbols-outlined">menu</span>
-                        </button>
                     </div>
                 </div>
-            </div>
-        </header>
+            </header>
+        </>
     )
 }
