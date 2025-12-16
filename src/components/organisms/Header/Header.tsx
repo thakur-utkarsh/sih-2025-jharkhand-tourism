@@ -138,7 +138,7 @@ export const Header = () => {
                                         <h1>Ram Ram JII 🔱🚩</h1>
                                     </span>
                                 </div>
-                                <h2>Jharkhand Tourism</h2>
+                                <h2>Jharkhand Tourism </h2>
                             </div>
 
                             <nav className="nav">
