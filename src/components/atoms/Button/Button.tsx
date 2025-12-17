@@ -1,5 +1,3 @@
-import type {ButtonProps} from "./ButtonProps.ts";
-
 /**
  * Button Component
  *
@@ -9,14 +7,12 @@ import type {ButtonProps} from "./ButtonProps.ts";
  * @component
  * @returns {JSX.Element} A button element with predefined styles and text.
  */
-const Button = (props:ButtonProps) => {
+const Button = () => {
     return (
         <>
             {/* Button element with predefined classes for styling */}
-            <button
-                name="button"
-                className={props.className}>
-                {props.buttonText}
+            <button name="button" className="btn btn-primary btn-outline btn-lg">
+                ram ram Jii
             </button>
         </>
     );
